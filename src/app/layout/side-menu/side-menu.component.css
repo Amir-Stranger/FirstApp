@@ -1,0 +1,52 @@
+.example-tree-invisible {
+    display: none;
+  }
+
+  
+  .example-tree ul,
+  .example-tree li {
+    background-color: #673ab7;
+    width:10vw;    
+    margin-right: 5px;  
+    margin-top: 0;
+    margin-bottom: 0;
+    overflow-x: hidden;
+    list-style-type: none;
+    font-family: 'Samim' !important;
+    font-weight: bold;
+  }
+  .mat-tree-node{
+    text-decoration: none;
+    color: #fff;
+  }
+  .mat-tree-node:hover{
+    color: rgb(43, 43, 43);
+  }
+  .mat-tree {
+    padding-top: 50px;
+    background: #673ab7;
+}
+
+.tree{
+  font-family: 'Latin';
+  white-space: nowrap;
+  text-align: center;
+  font-size: 1rem !important;
+}
+
+.menu-container{
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 150px;
+}
+.menu{
+  color: #fff;
+  text-align: center;
+}
+.router-link-active{
+  border-bottom: 3px double rgb(0, 0, 0);
+  color: black;
+}

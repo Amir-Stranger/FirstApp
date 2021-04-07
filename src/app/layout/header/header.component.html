@@ -1,0 +1,11 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" (click)="toggle()">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" [routerLink]="['/main']">
+        <mat-icon>home</mat-icon>
+    </button>
+    <button mat-button class="example-icon" [routerLink]="['/resume']"
+        routerLinkActive="router-link-active">رزومه</button>
+    <button mat-button class="example-icon">درباره سایت</button>
+</mat-toolbar>

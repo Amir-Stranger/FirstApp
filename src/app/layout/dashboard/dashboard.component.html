@@ -1,0 +1,11 @@
+<mat-drawer-container class="example-container side-menu" [hasBackdrop]="false">
+    <mat-drawer #drawer class="example-sidenav" mode="push">
+        <side-menu></side-menu>
+    </mat-drawer>
+    <header (sideNavToggle)="drawer.toggle()"></header>
+
+    <div class="main-content">
+        <router-outlet></router-outlet>
+    </div>
+
+</mat-drawer-container>

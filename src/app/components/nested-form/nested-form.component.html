@@ -1,0 +1,93 @@
+<div lang="fa" class="container jumbotron col-md-5">
+    <form class="example-form" [formGroup]="nestedForm" (ngSubmit)="save()">
+        <h2> فرم تو در تو</h2>
+        <hr />
+        <div class="row">
+            <mat-form-field class="col-md-5">
+                <input matInput placeholder="نام :" formControlName="firstName" type="text" />
+                <mat-error *ngIf="nestedForm.get('firstName')!.touched && nestedForm.get('firstName')!.invalid">
+                    <mat-error *ngIf="nestedForm.get('firstName')!.errors">نام را وارد کنید</mat-error>
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="col-md-5">
+                <input matInput placeholder="نام خانوادگی :" formControlName="lastName" type="text" />
+                <mat-error *ngIf="nestedForm.get('lastName')!.touched && nestedForm.get('lastName')!.invalid">
+                    نام خانوادگی را وارد کنید
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="mt-3">
+            <h2>اطلاعات تماس</h2>
+            <hr />
+            <div class="row" formGroupName="contactInfo">
+                <mat-form-field class="col-md-4">
+                    <input matInput placeholder="تلفن :" formControlName="tel" type="txt" />
+                    <mat-error *ngIf="contactInfo.get('tel')!.touched && contactInfo.get('tel')!.invalid">
+                        شماره تلفن را وارد کنید
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field class="col-md-4">
+                    <input matInput placeholder="ایمیل :" formControlName="email" type="text" />
+                    <mat-error *ngIf="contactInfo.get('email')!.touched && contactInfo.get('email')!.invalid">
+                        <mat-error *ngIf="contactInfo.get('email')!.errors.required">ایمیل را وارد کنید</mat-error>
+                        <mat-error *ngIf="contactInfo.get('email')!.errors.email">ایمیل اشتباه وارد شده است</mat-error>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="mt-3">
+            <h2>حساب بانکی</h2>
+            <hr />
+            <div class="row" formGroupName="bankAccount">
+                <mat-form-field class="col-md-4">
+                    <input matInput placeholder="نام بانک :" formControlName="accountType" type="text" />
+                    <mat-error
+                        *ngIf="bankAccount.get('accountType')!.touched && bankAccount.get('accountType')!.invalid">
+                        <mat-error *ngIf="bankAccount.get('accountType')!.errors.required">نام بانک را وارد کنید
+                        </mat-error>
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field class="col-md-4">
+                    <input matInput placeholder="شماره حساب :" formControlName="accountNumber" type="text" />
+                    <mat-error
+                        *ngIf="bankAccount.get('accountNumber')!.touched && bankAccount.get('accountNumber')!.invalid">
+                        <mat-error *ngIf="bankAccount.get('accountNumber')!.errors.required">شماره حساب را وارد کنید
+                        </mat-error>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div>
+            <div class="row">
+                <h2 class="col-md-10"> نشانی :</h2>
+                <button class="" mat-icon-button matTooltip="افزودن نشانی جدید" matTooltipPosition="left"
+                    (click)="addAddress($event)">
+                    <mat-icon>add</mat-icon>
+                </button>
+            </div>
+            <hr />
+            <div formArrayName="addressList">
+                <div *ngFor="let item of addressList.controls; let i=index">
+                    <div [formGroupName]="i">
+                        <mat-form-field class="col-md-2">
+                            <mat-label>نوع :</mat-label>
+                            <mat-select #type formControlName="type">
+                                <mat-option value="Home">منزل</mat-option>
+                                <mat-option value="Work">محل کار</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <mat-form-field class="mr-3 col-md-6">
+                            <textarea matInput formControlName="address" placeholder="نشانی :"></textarea>
+                        </mat-form-field>
+                        <button mat-icon-button matTooltip="حذف نشانی" matTooltipPosition="left"
+                            (click)="removeAddress($event,i)">
+                            <mat-icon>remove</mat-icon>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button mat-raised-button color="primary" class="col-md-12 mt-3" type="submit">ثبت</button>
+    </form>
+</div>

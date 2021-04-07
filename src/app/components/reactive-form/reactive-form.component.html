@@ -1,0 +1,55 @@
+<div class="container col-md-5 border border-4 p-3 mt-4">
+    <h2>Reactive Form</h2>
+    <hr />
+    <form dir="ltr" [formGroup]="reactiveForm" (ngSubmit)="save()">
+        <div>
+            <div class="form-label-group">
+                <input class="form-control" id="firstName" type="text" placeholder="First name"
+                    formControlName="firstName">
+                <label for="firstName">First name</label>
+            </div>
+            <div role="alert" *ngIf="reactiveForm.get('firstName')!.touched && reactiveForm.get('firstName')!.invalid"
+                class="alert alert-warning">
+                <small *ngIf="reactiveForm.get('firstName')!.errors">Firstname is
+                    Required</small>
+            </div>
+        </div>
+        <div>
+            <div class="form-label-group">
+                <input class="form-control" id="lastName" type="text" placeholder="Last name"
+                    formControlName="lastName">
+                <label for="lastName">Last Name</label>
+            </div>
+            <div *ngIf="reactiveForm.get('lastName')!.touched && reactiveForm.get('lastName')!.invalid"
+                class="alert alert-info" role="alert">
+                <small *ngIf="reactiveForm.get('lastName')!.errors">Lastname is
+                    Required</small>
+            </div>
+        </div>
+        <div>
+            <div class="form-label-group">
+                <input class="form-control" id="email" type="text" placeholder="Email" formControlName="email">
+                <label for="email">Email</label>
+            </div>
+            <div *ngIf="reactiveForm.get('email')!.touched && reactiveForm.get('email')!.invalid"
+                class="alert alert-info" role="alert">
+                <small *ngIf="reactiveForm.get('email')!.errors!.required">Email is Required</small>
+                <small *ngIf="reactiveForm.get('email')!.errors!.pattern">Invalid Email Address</small>
+            </div>
+        </div>
+        <div>
+            <div class="form-label-group">
+                <input class="form-control" id="code" type="numbers" placeholder="Code" formControlName="code">
+                <label for="code">Code</label>
+            </div>
+            <div *ngIf="reactiveForm.get('code')!.touched && reactiveForm.get('code')!.invalid" class="alert alert-info"
+                role="alert">
+                <small *ngIf="reactiveForm.get('code')!.errors!.required">Code is Required</small>
+                <small *ngIf="reactiveForm.get('code')!.errors!.minlength">Min Characters 2</small>
+                <small *ngIf="reactiveForm.get('code')!.errors!.maxlength">Max Characters 4</small>
+            </div>
+        </div>
+        <button mat-raised-button color="primary" class="ml-3" type="submit"
+            [disabled]="reactiveForm.invalid">Save</button>
+    </form>
+</div>

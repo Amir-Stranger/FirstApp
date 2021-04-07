@@ -1,0 +1,14 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  .example-icon{
+    margin: 3px;
+  }
+  button{
+    font-family: 'Samim' !important;
+    font-weight: bold;
+  }
+  .router-link-active{
+    border-bottom: 3px  double rgb(61, 61, 61);
+    color: rgb(61, 61, 61);    
+  }

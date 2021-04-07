@@ -1,0 +1,91 @@
+<div dir="ltr" class="container mt-4">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card-header">
+                Template Driven Form
+            </div>
+            <div class="card-body">
+                <form #tform="ngForm" (ngSubmit)="tform.form.valid && save(tform.value)" novalidate>
+                    <div class="mb-3">
+                        <label class="form-label">First Name:</label>
+                        <input type="text" class="form-control" name="firstName" ngModel #firstName="ngModel"
+                            [ngClass]="{'is-invalid': tform.submitted && firstName.invalid}" required />
+                        <div *ngIf="tform.submitted && firstName.invalid" class="invalid-feedback">
+                            <div *ngIf="firstName.errors">First Name is required</div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Last Name:</label>
+                        <input type="text" class="form-control" name="lastName" ngModel #lastName="ngModel"
+                            [ngClass]="{'is-invalid': tform.submitted && lastName.invalid}" required>
+                        <div *ngIf="tform.submitted && lastName.invalid" class="invalid-feedback">
+                            <div *ngIf="lastName.errors">Last Name is required</div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Email:</label>
+                        <input type="text" class="form-control" name="email" ngModel #email="ngModel"
+                            [ngClass]="{'is-invalid': tform.submitted && email.invalid}" required email>
+                        <div *ngIf="tform.submitted && email.invalid" class="invalid-feedback">
+                            <div *ngIf="email.errors!.required">Email is required</div>
+                            <div *ngIf="email.errors!.email">Invalid email address</div>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="form-label">Gender:</label>
+                        <select class="form-control form-select mb-3" name="genderId" ngModel #genders="ngModel"
+                            [ngClass]="{'is-invalid': tform.submitted && genders.invalid}" required>
+                            <option disabled>Select ...</option>
+                            <option *ngFor="let item of gender" [value]="item.id">{{item.title}}</option>
+                        </select>
+                        <div *ngIf="tform.submitted && genders.invalid" class="invalid-feedback">
+                            <div *ngIf="genders.errors">Gender is required</div>
+                        </div>
+                    </div>
+
+
+                    <label class="form-label">Grade:</label>
+                    <select class="form-control mb-3" name="gradeId" ngModel #grade="ngModel"
+                        [ngClass]="{'is-invalid': tform.submitted && grade.invalid}" required>
+                        <option disabled>Select ...</option>
+                        <option *ngFor="let item of grades" [value]="item.id">{{item.title}}</option>
+                    </select>
+                    <div *ngIf="tform.submitted && grade.invalid" class="invalid-feedback">
+                        <div *ngIf="grade.errors">Grade is required</div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card-header">
+                Show Info
+            </div>
+            <div class="card-body">
+                <form>
+                    <div class="mb-3">
+                        <label class="form-label">First Name: </label>
+                        <b> {{form.firstName}}</b>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Last Name: </label>
+                        <b> {{form.lastName}}</b>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Email: </label>
+                        <b> {{form.email}}</b>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Gender: </label>
+                        <b> {{form.genderTitle}}</b>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Grade: </label>
+                        <b> {{form.gradeTitle}}</b>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

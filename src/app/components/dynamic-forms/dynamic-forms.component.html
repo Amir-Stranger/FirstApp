@@ -1,0 +1,34 @@
+<div class="container">
+    <h2>Dynamic Form</h2>
+    <form [formGroup]="dynamicForm" (submit)="onSubmit()">
+        <div *ngFor="let item of formTemplate">
+            <div [ngSwitch]="item.type">
+                <div *ngSwitchCase="'text'">
+                    <mat-form-field appearance="outline">
+                        <mat-label>{{item.label}}</mat-label>
+                        <input matInput formControlName="{{item.label}}">
+                        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                        <mat-hint>Hint</mat-hint>
+                    </mat-form-field>
+                </div>
+                <div *ngSwitchCase="'textBox'">
+                    <mat-form-field>
+                        <textarea matInput formControlName="{{item.label}}" placeholder="{{item.label}}"></textarea>
+                    </mat-form-field>
+                </div>
+                <div *ngSwitchCase="'select'">
+                    <mat-form-field>
+                        <mat-select formControlName="{{item.label}}">
+                            <mat-option>-- None --</mat-option>
+                            <mat-option *ngFor="let i of item.options" value="{{i}}">{{i}}</mat-option>
+                        </mat-select>
+                        <mat-label>
+                            <b>{{item.label}}</b>
+                        </mat-label>
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+        <button type="submit">save</button>
+    </form>
+</div>
