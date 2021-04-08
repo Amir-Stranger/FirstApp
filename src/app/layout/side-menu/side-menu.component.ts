@@ -29,24 +29,6 @@ const TREE_DATA: MenuItem[] = [
     },]
   },
   {
-    id: 2,
-    title: "توضیحات",
-    path: "/details",
-    children: [{
-      id: 1,
-      title: "اسلاید اول",
-      path: "/details1"
-    }, {
-      id: 1,
-      title: "اسلاید دوم",
-      path: "/details2"
-    }, {
-      id: 1,
-      title: "اسلاید سوم",
-      path: "/details3"
-    },]
-  },
-  {
     id: 3,
     title: "لیست ها",
     path: "",

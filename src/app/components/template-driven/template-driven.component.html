@@ -45,7 +45,7 @@
 
 
                     <label class="form-label">Grade:</label>
-                    <select class="form-control mb-3" name="gradeId" ngModel #grade="ngModel"
+                    <select class="form-control form-select mb-3" name="gradeId" ngModel #grade="ngModel"
                         [ngClass]="{'is-invalid': tform.submitted && grade.invalid}" required>
                         <option disabled>Select ...</option>
                         <option *ngFor="let item of grades" [value]="item.id">{{item.title}}</option>

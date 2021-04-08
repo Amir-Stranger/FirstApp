@@ -1,5 +1,18 @@
-<h1>Category With HttpClient</h1>
-<div *ngFor="let item of categoryWithHttpClient">
-    <a>{{item.categoryName}}</a>
-    <span class="ml-5 mr-5">{{item.description}}</span>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h1>Category With HttpClient</h1>
+            <div *ngFor="let item of categoryWithHttpClient">
+                <a>{{item.categoryName}}</a>
+                <span class="ml-5 mr-5">{{item.description}}</span>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h1>Category With Service</h1>
+            <div *ngFor="let prod of categoryWithService">
+                <a>{{prod.categoryName}}</a>
+                <span class="ml-5 mr-5">{{prod.description}}</span>
+            </div>
+        </div>
+    </div>
 </div>

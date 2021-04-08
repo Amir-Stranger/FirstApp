@@ -10,6 +10,7 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 
 
@@ -26,7 +27,8 @@ import { MatSelectModule } from '@angular/material/select';
     MatChipsModule,
     MatTooltipModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    MatExpansionModule
   ],
   exports: [
     CommonModule,
@@ -39,7 +41,8 @@ import { MatSelectModule } from '@angular/material/select';
     MatChipsModule,
     MatTooltipModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    MatExpansionModule
   ]
 })
 export class MaterialModule { }
