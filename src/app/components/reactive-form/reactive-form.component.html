@@ -9,7 +9,7 @@
                 <label for="firstName">First name</label>
             </div>
             <div role="alert" *ngIf="reactiveForm.get('firstName')!.touched && reactiveForm.get('firstName')!.invalid"
-                class="alert alert-warning">
+                class="alert alert-info">
                 <small *ngIf="reactiveForm.get('firstName')!.errors">Firstname is
                     Required</small>
             </div>

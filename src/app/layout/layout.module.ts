@@ -7,6 +7,7 @@ import { MainComponent } from './main/main.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MaterialModule } from '../modules/material.module';
 import { SideMenuComponent } from './side-menu/side-menu.component';
+import { BaseModule } from '../components/base.module';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { SideMenuComponent } from './side-menu/side-menu.component';
   imports: [
     CommonModule,
     LayoutRoutingModule,
-    MaterialModule
+    MaterialModule,
+    BaseModule,
   ],
   exports: [HeaderComponent, MainComponent, DashboardComponent, SideMenuComponent]
 })

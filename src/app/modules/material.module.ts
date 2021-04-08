@@ -11,6 +11,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatStepperModule } from '@angular/material/stepper';
 
 
 
@@ -28,7 +29,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatTooltipModule,
     MatInputModule,
     MatSelectModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatStepperModule,
   ],
   exports: [
     CommonModule,
@@ -42,7 +44,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatTooltipModule,
     MatInputModule,
     MatSelectModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatStepperModule
   ]
 })
 export class MaterialModule { }

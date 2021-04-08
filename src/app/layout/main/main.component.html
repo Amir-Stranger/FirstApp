@@ -1,22 +1,33 @@
-<div>
-    <div class="container">
-        <img class="img-ang" src="../../../assets/images/confused_developer.png" />
-        <label>این یک سایت انگولاری است</label>
+<div class="container-fluid">
+    <div class="matn">
+        <div class="cont">
+            <label class="head">STRANGER<div class="under">website</div></label>
+
+            <div class="img-ang">
+                <img src="../../../assets/images/main-pic.png" />
+            </div>
+
+        </div>
+    </div>
+    <div class="img-header"></div>
+    <div class="dialog-btn">
+        <div class="example-container">
+            <div class="form-floating mb-3">
+                <mat-form-field appearance="outline">
+                    <mat-label>نام کاربری :</mat-label>
+                    <input matInput type="text" class="">
+                    <mat-icon matSuffix>account_circle</mat-icon>
+                </mat-form-field>
+            </div>
+            <div class="form-floating">
+                <mat-form-field appearance="outline">
+                    <mat-label>رمز ورود :</mat-label>
+                    <input matInput [type]="hide ? 'password' : 'text'">
+                    <mat-icon matSuffix>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </mat-form-field>
+            </div>
+            <button class="col-md-12" mat-raised-button color="primary">ورود</button>
+            <a mat-button class="col-md-2 mt-1">ثبت نام</a>
+        </div>
     </div>
 </div>
-<div class="container">
-    <mat-accordion class="example-headers-align" multi>
-        <mat-expansion-panel>
-            <mat-expansion-panel-header>
-                <mat-panel-title>
-                    Personal data
-                </mat-panel-title>
-                <mat-panel-description>
-                    Type your name and age
-                    <mat-icon>account_circle</mat-icon>
-                </mat-panel-description>
-            </mat-expansion-panel-header>
-        </mat-expansion-panel>
-    </mat-accordion>
-</div>
-<div class="img-header"></div>
