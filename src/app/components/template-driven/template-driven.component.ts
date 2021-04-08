@@ -5,7 +5,7 @@ import { GenderService } from 'src/app/services/gender.service';
 import { GradeService } from 'src/app/services/grade.service';
 
 @Component({
-  selector: 'app-template-driven',
+  selector: 'template-driven',
   templateUrl: './template-driven.component.html',
   styleUrls: ['./template-driven.component.css']
 })

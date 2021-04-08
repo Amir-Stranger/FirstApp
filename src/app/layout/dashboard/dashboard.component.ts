@@ -14,8 +14,5 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  // toggleSidebar() {
-  //   this.showSideNav = !this.showSideNav;
-  // }
 
 }
