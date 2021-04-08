@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'dynamic-forms',
@@ -11,16 +11,23 @@ export class DynamicFormsComponent implements OnInit {
   formTemplate = [
     {
       "type": "text",
-      "label": "firstName"
+      "label": "firstName",
+      "name": "نام"
     },
     {
-      "type": "text",
-      "label": "lastName"
+      "type": "email",
+      "label": "email",
+      "name": "ایمیل"
+    }, {
+      "type": "password",
+      "label": "password",
+      "name": "رمز ورود"
     },
     {
       "type": "select",
       "label": "gender",
-      "options": ["Men", "Women"]
+      "name": "جنسیت",
+      "options": ["زن", "مرد"]
     }
   ]
 
@@ -30,9 +37,9 @@ export class DynamicFormsComponent implements OnInit {
   ngOnInit(): void {
     let group: any = {}
     this.formTemplate.forEach(input_template => {
-      group[input_template.label] = new FormControl('');
+      group[input_template.label] = new FormControl('', [Validators.required]);
     })
-    this.dynamicForm = new FormGroup(group)
+    this.dynamicForm = new FormGroup(group);
   }
 
   onSubmit(): void {

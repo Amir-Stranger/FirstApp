@@ -5,30 +5,61 @@
             <div [ngSwitch]="item.type">
                 <div *ngSwitchCase="'text'">
                     <mat-form-field appearance="outline">
-                        <mat-label>{{item.label}}</mat-label>
-                        <input matInput formControlName="{{item.label}}">
-                        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-                        <mat-hint>Hint</mat-hint>
+                        <mat-label>{{item.name}}</mat-label>
+                        <input matInput type="text" formControlName="{{item.label}}">
+                        <mat-hint class="errorMessage"
+                            *ngIf="dynamicForm.get(item.label)!.touched && dynamicForm.get(item.label)!.invalid">
+                            {{item.name}} اجباری
+                            است.
+                        </mat-hint>
                     </mat-form-field>
                 </div>
-                <div *ngSwitchCase="'textBox'">
+                <div *ngSwitchCase="'email'">
+                    <mat-form-field appearance="outline">
+                        <mat-label>{{item.name}}</mat-label>
+                        <input matInput type="text" formControlName="{{item.label}}" email>
+                        <mat-hint class="errorMessage"
+                            *ngIf="dynamicForm.get(item.label)!.touched && dynamicForm.get(item.label)!.invalid">
+                            ایمیل را وارد کنید یا فرمت اشتباه است.
+                        </mat-hint>
+                    </mat-form-field>
+                </div>
+                <div *ngSwitchCase="'password'">
+                    <mat-form-field appearance="outline">
+                        <mat-label>{{item.name}}</mat-label>
+                        <input matInput type="password" formControlName="{{item.label}}">
+                        <mat-hint class="errorMessage"
+                            *ngIf="dynamicForm.get(item.label)!.touched && dynamicForm.get(item.label)!.invalid">
+                            {{item.name}} اجباری
+                            است.</mat-hint>
+                    </mat-form-field>
+                </div>
+                <div *ngSwitchCase="'textarea'">
                     <mat-form-field>
                         <textarea matInput formControlName="{{item.label}}" placeholder="{{item.label}}"></textarea>
+                        <mat-hint class="errorMessage"
+                            *ngIf="dynamicForm.get(item.label)!.touched && dynamicForm.get(item.label)!.invalid">
+                            {{item.name}} اجباری
+                            است.</mat-hint>
                     </mat-form-field>
                 </div>
                 <div *ngSwitchCase="'select'">
                     <mat-form-field>
                         <mat-select formControlName="{{item.label}}">
-                            <mat-option>-- None --</mat-option>
+                            <mat-option>-- انتخاب کنید --</mat-option>
                             <mat-option *ngFor="let i of item.options" value="{{i}}">{{i}}</mat-option>
                         </mat-select>
                         <mat-label>
-                            <b>{{item.label}}</b>
+                            <b>{{item.name}}</b>
                         </mat-label>
+                        <mat-hint class="errorMessage"
+                            *ngIf="dynamicForm.get(item.label)!.touched && dynamicForm.get(item.label)!.invalid">
+                            {{item.name}} اجباری
+                            است.</mat-hint>
                     </mat-form-field>
                 </div>
             </div>
         </div>
-        <button type="submit">save</button>
+        <button mat-raised-button type="submit" [disabled]="dynamicForm.invalid">ثبت</button>
     </form>
 </div>
