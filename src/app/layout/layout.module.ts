@@ -8,10 +8,11 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { MaterialModule } from '../modules/material.module';
 import { SideMenuComponent } from './side-menu/side-menu.component';
 import { BaseModule } from '../components/base.module';
+import { SiteInfoComponent } from './site-info/site-info.component';
 
 
 @NgModule({
-  declarations: [HeaderComponent, MainComponent, DashboardComponent, SideMenuComponent],
+  declarations: [HeaderComponent, MainComponent, DashboardComponent, SideMenuComponent, SiteInfoComponent],
   imports: [
     CommonModule,
     LayoutRoutingModule,
