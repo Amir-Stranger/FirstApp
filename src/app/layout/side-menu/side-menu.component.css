@@ -43,8 +43,11 @@
   height: 150px;
 }
 .menu{
+  width: 150px;
+  height: 150px;
+  background: url(../../../assets/images/Baby_Groot.ico) no-repeat center;
   color: #fff;
-  text-align: center;
+  background-size: 100px 100px;
 }
 .router-link-active{
   border-bottom: 3px double rgb(0, 0, 0);
