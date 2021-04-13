@@ -4,7 +4,7 @@
     height: 50vh;
 }
 .container-fluid{
-display: grid;
+    display: grid;
 }
 .cont{
     display: flex;
