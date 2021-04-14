@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { NgxUiLoaderService } from "ngx-ui-loader";
 
 @Component({
   selector: 'header',
@@ -7,7 +8,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private ngxService: NgxUiLoaderService) { }
 
   ngOnInit(): void {
   }
@@ -16,6 +17,13 @@ export class HeaderComponent implements OnInit {
 
   toggle() {
     this.sideNavToggle.emit();
+  }
+
+  showLoader(): void {
+    this.ngxService.startBackground();
+    setTimeout(() => {
+      this.ngxService.stopBackground();
+    }, 1000);
   }
 
 }

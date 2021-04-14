@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'dynamic-forms',
@@ -32,7 +33,7 @@ export class DynamicFormsComponent implements OnInit {
   ]
 
 
-  constructor() { }
+  constructor(private toast: ToastrService) { }
 
   ngOnInit(): void {
     let group: any = {}
@@ -43,6 +44,7 @@ export class DynamicFormsComponent implements OnInit {
   }
 
   onSubmit(): void {
+    this.toast.success("ذخیره انجام شد ...");
     console.log(this.dynamicForm.value);
   }
 }

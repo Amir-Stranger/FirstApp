@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgxUiLoaderService } from "ngx-ui-loader";
 
 @Component({
   selector: 'site-info',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SiteInfoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private ngxService: NgxUiLoaderService) { }
 
   ngOnInit(): void {
   }

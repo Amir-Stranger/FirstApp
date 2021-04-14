@@ -8,6 +8,7 @@ import { LayoutModule } from './layout/layout.module';
 import { MaterialModule } from './modules/material.module';
 import { BaseModule } from './components/base.module';
 import { SharedModule } from './modules/shared.module';
+import { NgxUiLoaderModule } from "ngx-ui-loader";
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { SharedModule } from './modules/shared.module';
     MaterialModule,
     BaseModule,
     SharedModule,
+    NgxUiLoaderModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

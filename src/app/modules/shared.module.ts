@@ -8,7 +8,6 @@ import { HttpClientModule } from '@angular/common/http';
 
 
 
-
 @NgModule({
   imports: [
     CommonModule,
@@ -24,7 +23,7 @@ import { HttpClientModule } from '@angular/common/http';
   exports: [
     FormsModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ]
 })
 export class SharedModule { }
