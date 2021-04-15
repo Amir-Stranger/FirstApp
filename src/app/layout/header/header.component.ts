@@ -20,10 +20,10 @@ export class HeaderComponent implements OnInit {
   }
 
   showLoader(): void {
-    this.ngxService.startBackground();
+    this.ngxService.start();
     setTimeout(() => {
-      this.ngxService.stopBackground();
-    }, 1000);
+      this.ngxService.stop();
+    }, 500);
   }
 
 }
