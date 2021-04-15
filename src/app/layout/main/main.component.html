@@ -10,24 +10,19 @@
         </div>
     </div>
     <div class="img-header"></div>
-    <div class="dialog-btn">
-        <div class="example-container">
-            <div class="form-floating">
-                <mat-form-field appearance="outline">
-                    <mat-label>نام کاربری :</mat-label>
-                    <input matInput type="text" class="">
-                    <mat-icon matSuffix>account_circle</mat-icon>
-                </mat-form-field>
-            </div>
-            <div class="form-floating">
-                <mat-form-field appearance="outline">
-                    <mat-label>رمز ورود :</mat-label>
-                    <input matInput [type]="hide ? 'password' : 'text'">
-                    <mat-icon matSuffix>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                </mat-form-field>
-            </div>
-            <button class="col-md-12" mat-raised-button color="primary">ورود</button>
-            <a mat-button class="col-md-2 mt-1">ثبت نام</a>
+
+    <ng-container *ngIf="isAuthenticate;else templateName">
+        <div class="wlc">
+            <p>wellcome {{userName | uppercase}}</p>
         </div>
-    </div>
+
+    </ng-container>
+    <ng-template #templateName>
+        <div class="dialog-btn">
+            <div class="example-container">
+                <login-form></login-form>
+            </div>
+        </div>
+    </ng-template>
+
 </div>

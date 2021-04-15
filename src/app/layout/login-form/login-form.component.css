@@ -1,0 +1,15 @@
+*{
+    font-family: "Samim";
+}
+mat-icon{
+    font-family: 'Material Icons';
+}
+
+::ng-deep .mat-form-field-outline{    
+    border-radius: 7px;
+    background-color: #fff ;
+}
+
+::ng-deep .mat-form-field-label{
+    color: black;
+}

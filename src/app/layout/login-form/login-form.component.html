@@ -1,0 +1,24 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)">
+    <div class="form-floating">
+        <mat-form-field appearance="outline">
+            <mat-label>نام کاربری :</mat-label>
+            <input formControlName="userName" matInput type="text">
+            <mat-icon matSuffix>account_circle</mat-icon>
+            <mat-error *ngIf="loginForm.controls['userName'].invalid && loginForm.controls['userName'].touched">
+                نام کاربری را وارد کنید.
+            </mat-error>
+        </mat-form-field>
+    </div>
+    <div class="form-floating">
+        <mat-form-field appearance="outline">
+            <mat-label>رمز ورود :</mat-label>
+            <input formControlName="password" matInput [type]="hide ? 'password' : 'text'">
+            <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            <mat-error *ngIf="loginForm.controls['password'].invalid && loginForm.controls['password'].touched">
+                رمز ورود را وارد کنید.
+            </mat-error>
+        </mat-form-field>
+    </div>
+    <button class="col-md-12" mat-raised-button color="primary" type="submit">ورود</button>
+    <a mat-button class="col-md-2 mt-1">ثبت نام</a>
+</form>

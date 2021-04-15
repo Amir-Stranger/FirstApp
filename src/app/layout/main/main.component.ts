@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthenticateService } from 'src/app/services/authenticate.service';
 
 @Component({
   selector: 'app-main',
@@ -7,11 +7,15 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit {
-  hide = true;
+  isAuthenticate: boolean = false;
+  userName: string | null = localStorage.getItem('name');
 
-  constructor(private _formBuilder: FormBuilder) { }
+  constructor(private authService: AuthenticateService) { }
 
   ngOnInit(): void {
+    this.isAuthenticate = this.authService.isauthenticate;
   }
+
+
 
 }
